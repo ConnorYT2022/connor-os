@@ -2,7 +2,7 @@ import os
 import time
 
 # Говно идея от коннора
-# Connor os 2022.0.3
+# Connor os 2022.0.4
 
 while (0 in range(5)):
     os.system("cls")
@@ -11,13 +11,13 @@ while (0 in range(5)):
 
     if command == "cmd":
         print("Opening CMD")
-        time.sleep(5)
+        time.sleep(1)
         os.system("start cmd")
 
     if command == "exit":
-        print("Goodbye! (If program is not closing try enter command in range 4)")
-        time.sleep(5)
-        os.close
+        print("Goodbye!")
+        time.sleep(1)
+        break
     
     if command == "developers":
         print("ConnorOS Creators")
@@ -25,15 +25,21 @@ while (0 in range(5)):
     
     if command == "createdirectory":
         foldername = input("Enter a folder name: ")
+        if foldername == None or foldername == "" or foldername == " ":
+            print("Ты че ебанат? ВВЕДИ НАЗВАНИЕ ПАПКИ ГЕНИЙ")
+            time.sleep(2)
         print("Creating directory, please wait.")
-        time.sleep(5)
+        time.sleep(1)
         os.mkdir(foldername)
         print("Folder created!")
     
     if command == "createfile":
         filename = input("Enter a file name: ")
+        if filename == None or filename == "" or filename == " ":
+            print("Ты че ебанат? ВВЕДИ НАЗВАНИЕ ФАЙЛА ГЕНИЙ")
+            time.sleep(2)
         file = open(filename, "w")
-        time.sleep(5)
+        time.sleep(1)
         print("Created!")
     
     if command == "off":
@@ -54,6 +60,3 @@ while (0 in range(5)):
     if command == "help":
         print("Opening a command list")
         os.system("start Txts/commands.txt")
-    else:
-        print("I don't know this command!")
-        time.sleep(5)
